@@ -10,7 +10,7 @@ class App extends React.Component {
   state = { videos: [], selectedVideo: null };
 
   componentDidMount() {
-    this.onTermSubmit("Progamming");
+    this.onTermSubmit("Eminem");
   }
 
   onTermSubmit = async (term) => {
@@ -23,7 +23,7 @@ class App extends React.Component {
         key: KEY,
       },
     });
-
+    console.log(response.data.items);
     this.setState({
       videos: response.data.items,
       selectedVideo: response.data.items[0],

@@ -1,6 +1,6 @@
 import "./VideoItem.css";
 import React from "react";
-
+import { getTimeFromTimeStamp } from "../utils/timeHelper";
 const VideoItem = ({ video, onVideoSelect }) => {
   return (
     <div onClick={() => onVideoSelect(video)} className="video-item item">
@@ -11,6 +11,8 @@ const VideoItem = ({ video, onVideoSelect }) => {
       />
       <div className="content">
         <div className="header">{video.snippet.title}</div>
+        <p className="align-self-end">{video.snippet.channelTitle}</p>
+        <p>{getTimeFromTimeStamp(video.snippet.publishTime)}</p>
       </div>
     </div>
   );
